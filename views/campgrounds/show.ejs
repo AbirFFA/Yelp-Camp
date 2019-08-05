@@ -1,0 +1,116 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="card mb-5">
+                <img class="img-thumbnail border-0 p-0" src="<%= campground.image %>">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 class="float-right">$9.00/night</h4>
+                        <h4><a href="#"><%=campground.name%></a></h4>
+                        <p class="card-text"><%= campground.description %></p>
+                        <p><em>Submitted by <a href="#"><%= campground.author.username %></a></em></p>
+                        <% if (currentUser && campground.author.id.equals(currentUser._id)) { %>
+                            <a href="/campgrounds/<%= campground._id%>/edit" class="btn btn-warning btn-sm">Edit</a>
+                            <form id="deleteForm" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="card-footer border-top border-primary">
+                    <% if (currentUser) { %>
+                        <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                            <div class="form-group row">
+                                <label for="staticEmail" class="col-sm-3 col-form-label">Comment as</label>
+                                <div class="col-sm-7">
+                                    <input name="comment[author]" type="text" readonly class="form-control-plaintext" id="staticEmail2" value="<%= currentUser.username %>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword2" class="sr-only">Comment</label>
+                                <textarea name="comment[text]" type="text" class="form-control" id="inputPassword2" placeholder="Comment"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-sm">Add comment</button>
+                            </div>
+                        </form>
+                    <% } else { %>
+                        <div class="border border-dark rounded-lg p-4">
+                            <span class="">What are your thoughts? Log in or Sign up !!</span>
+                            <div class="float-right">
+                                <a href="/login" class="btn btn-primary">Log in</a>
+                                <a href="/register" class="btn btn-dark ml-2">Sign up</a>
+                            </div>
+                        </div>
+                        <% } %>
+
+                    <hr>
+
+                    <% campground.comments.forEach(function (comment) { %>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <p class="float-right">10 days ago</p>
+                                <h6><%= comment.author.username %></h6>
+                                <p><%= comment.text %></p>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-light" data-toggle="dropdown">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item" href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" data-toggle="modal" data-target="#myModal">Edit <%= comment._id %></a>
+                                        <a class="dropdown-item" href="#">Delete</a>
+                                    </div>
+                                </div>
+
+                                <div class="modal fade" id="myModal">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Edit <%= comment._id %></h5>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=PUT" method="post">
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Comment:</label>
+                                                        <textarea class="form-control" id="message-text"><%= comment._id %> - <%= comment.text %></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <!-- Modal footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    <% }) %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
