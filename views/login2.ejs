@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yelp Camp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Following CSS files are connected to this HTML file, externally.-->
+    <link href="/stylesheets/form_css/style.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/form_css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/resources/fonts/iconic/css/material-design-iconic-font.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">
+    <!--External CSS Files ends here-->
+
+</head>
+<body>
+<!--In case, if the user wanted to move all elements from one place to one place, then simply copy and past the limiter tag with elements inside. We also created the limiter div for responsive design or if the user wanted to set width or height optionally.-->
+<div class="limiter">
+    <!--The side wallpaper (Bewasoft Logo and its description)-->
+    <div class="sidewallpaper col-md-6">
+        <div class="sidewallpaper-background">
+            <a class="p-t-30 form-title" href="/campgrounds">
+                <!--    				<img class="sideLogo" src="/stylesheets/resources/img/logo.png">-->
+                Yelp Camp
+            </a>
+
+            <p class="ptitle">Made for camping lovers. Made with ❤ and node.</p>
+        </div>
+    </div>
+    <!--Side Wallpaper Structures ends here-->
+
+    <!--Form-Container or all Elements covered in form (Elements after Sidewallpaper) Starts-->
+    <div class="form-container col-md-6">
+
+        <!--Signup/Login button in the corner structures starts here-->
+        <div class="sign-in">
+            <a href="/campgrounds">Home</a>
+            <a href="/register">Sign Up</a>
+        </div>
+        <!--Signup/Login button in the corner structures ends here-->
+
+        <!--Title of Form Starts-->
+        <span class="form-title p-b-30">Login</span>
+        <!--Title of Form Ends-->
+
+        <!--Logo as Title when the width is minimum than 768px. (Best for Mobiles, Tablets...) Starts-->
+        <span class="title p-b-20 p-t-30">
+            <img class="logo" src="/stylesheets/resources/img/logo2.png" alt="Title logo">
+        </span>
+        <!--Logo as Title when the width is minimum than 768px. (Best for Mobiles, Tablets...) Ends-->
+
+        <!--Form Structure Starts-->
+        <form action="/login" id="form" method="post">
+            <!--Username Input and It's Icons, Label...-->
+            <div class="input-div validate-input" data-validate="Email required">
+                <span class="input-label">Email:</span>
+                <input id="emailaddress" class="input" type="text" name="username" placeholder="Type your username:">
+                <span class="input-focus" data-symbol="&#xf15a;"></span>
+                <!--Remember: The data-symbol gets the label/input icon-->
+            </div>
+
+            <!--Password Input and It's Icons, Label...-->
+            <div class="input-div validate-input" data-validate="Password required">
+                <span class="input-label">Password:</span>
+                <input id="password" class="input" type="Password" name="password" placeholder="Type your password:">
+                <span id="passwordId" class="input-focus" data-symbol="&#xf190;"></span>
+                <!--Remember: The data-symbol gets the label/input icon-->
+            </div>
+
+            <!--Forgot Password Div and its link-->
+            <div class="text-right p-t-8 p-b-31" id="div-forgot-password">
+                <a href="forget.html" id="forgotpassword"><!--Remove "#" and past your link or page.-->
+                    Forget Password?
+                </a>
+            </div>
+
+            <!--Log in button/submit and its containers...-->
+            <div class="container-form-btn p-b-5">
+                <div class="wrap-form-btn">
+                    <button id="submitBtn" class="form-btn" type="submit">
+                        Log in
+                    </button>
+                </div>
+            </div>
+            <!--Log in Button structure ends here-->
+
+            <!--Checkbox Input (Remember Me)-->
+            <label class="check-container">Remember Me
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+
+            <!--Sign in Or Sign up options header-->
+            <div class="txt1 text-center p-t-54 p-b-20">
+                    <span>
+                        Or Sign In <span style ="color: green">|</span> Up Using
+                    </span>
+            </div>
+
+            <!--Social Media Icons for signing up or signing in:-->
+            <div class="flex-c-m smicons">
+                <a href="#" class="login100-social-item bg1">
+                    <i class="fa fa-facebook"></i>
+                </a>
+
+                <a href="#" class="login100-social-item bg2">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <a href="#" class="login100-social-item bg3">
+                    <i class="fa fa-google"></i>
+                </a>
+            </div>
+            <!--Social Media Icons structres ends here-->
+
+
+        </form>
+        <!--Form Structure Starts-->
+    </div>
+    <!--Form-Container or all Elements covered in form (Elements after Sidewallpaper) Starts-->
+</div>
+<!--Limiter Div structure ends.-->
+<script src="/stylesheets/resources/script/bootstrap.min.js"></script>
+<script type="text/javascript" src="/stylesheets/resources/script/script.js"></script><!--External JavaScript Files Connected with this HTML-->
+</body>
+</html>

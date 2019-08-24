@@ -1,0 +1,7 @@
+"font-awesome" folder is font library but it is not used in this file.
+
+"iconic" folder is the library of icons, you can pick an icon with a symbole.
+Visit this website to see all the icons and their symbols:
+http://zavoloklom.github.io/material-design-iconic-font/icons.html#person
+
+All the best!

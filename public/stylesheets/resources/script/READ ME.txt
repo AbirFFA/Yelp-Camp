@@ -1,0 +1,5 @@
+"script.js" are scripts connected to index.html (SIGN IN FORM).
+
+"script2.js" are scripts connected to signup.html (SIGN UP FORM).
+
+All the best!

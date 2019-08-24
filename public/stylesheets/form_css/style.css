@@ -1,0 +1,739 @@
+/*This style file is for Sign up, Sign in and Forget Page.*/
+
+/*We created only one CSS file, because if the user change a style of an element,
+it will be changed everywhere. We have tried our best to make it simple!*/
+
+/*All elements will have the below style:*/
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: calibri;
+}
+
+/*Body and Html Style*/
+body, html {
+    height: 100%;
+    font-family: calibri;
+}
+
+/*A Tags or (Links) Style*/
+a {
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: black;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    text-decoration: none !important;
+}
+
+/*If "a" is focused then apply this style*/
+a:focus {
+    outline: none !important;
+}
+
+/*If "a" hovers:*/
+a:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*All headers will have no margins*/
+h1,h2,h3,h4,h5,h6 {
+    margin: 0px;
+}
+
+/*Paraghraphs (p) style*/
+p {
+    font-family: Calibri;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0px !important;
+}
+
+/*list and its items style: (Optionally)*/
+ul, li {
+    margin: 0px;
+    list-style-type: none;
+}
+
+/*Above tags arn't used anywhere, but if the developer used them, those styles will be applied.*/
+/*---------------------------------------------*/
+/*Inputs Styles*/
+input {
+    outline: none;
+    border: none;
+    /*border-top-right-radius: 7px;
+    border-top-left-radius: 7px;*/
+}
+
+/*Text Area Style*/
+textarea {
+    outline: none;
+    border: none;
+}
+
+/*Global Pseudo-elements and their box-sizing style*/
+::after, ::before{
+    box-sizing: content-box !important;
+}
+
+/*If Text Area or Input was Focused then Apply this style*/
+textarea:focus, input:focus {
+    /*border-color: transparent !important;*/
+}
+
+/*---------------------------------------------*/
+
+/*Venders For Mozilla, Chrome, IE, Opera... */
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: black;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+/*Venders ends here*/
+
+/*------------------------------All global styles ends here-------------------------------------------*/
+/*Logo is here:*/
+.logo{
+    width: 180px;
+    padding-top: 10px;
+}
+
+/*Logo inside the sidewallpaper div*/
+.sideLogo{
+    width: 180px;
+}
+
+/*Holder of all elements*/
+.limiter{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+/*sidewallaper div styles and image can be also changed here.*/
+.sidewallpaper{
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+    padding: 0 !important;
+    background-image: url('../resources/img/1-img.jpg');
+    float: left;
+    width: 1100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    /*padding: 0 !important;*/
+    text-align: center;
+}
+
+/*In case, if the developer wanted to have or change the background:*/
+.sidewallpaper-background{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.5);
+    animation: sideTransform 1s;
+    transform: translateX(20px);
+    animation-fill-mode: both;
+}
+
+/*Animation of sidewallpaper-background*/
+@keyframes sideTransform{
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/*All elements container except sidewallpaper. For better understanding, see it in HTML.*/
+.form-container{
+    display: flex;
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    min-height: 100vh;
+    background: #ffa84c; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffa84c 0%, #ff7b0d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffa84c 0%,#ff7b0d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffa84c 0%,#ff7b0d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 ); /* IE6-9 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+/*The description under the Logo. See it in HTML.*/
+.ptitle{
+    text-align: center;
+    padding: 10px 80px;
+    color: white;
+}
+
+/*The hidden which appears when the width is under 768px (Tablets, Mobiles...)*/
+.title{
+    display: none;
+}
+
+/*----------------------------------Elements Inside #Form Element Starts Here---------------------------------------*/
+/*Form style*/
+form, #form{
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form-title{
+    text-align: center;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 40px;
+    font-family: Calibri;
+    display: block;
+    top: 0;
+    font-weight: bold;
+}
+
+/*Input-Div(For better understanding check HTML file) Style:*/
+.input-div{
+    width: 100%;
+    position: relative;
+}
+/*Input-label(For better understanding check HTML file) Style:*/
+.input-label{
+    font-family: Calibri;
+    font-size: 14.5px;
+    color: #FFF;
+    line-height: 1.5;
+    padding-left: 7px;
+}
+
+/*Inputs (Input) (For better understanding check HTML file) Style:*/
+.input{
+    font-family: Calibri;
+    font-size: 14px;
+    color: black;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: 42px;
+    background: white;
+    padding: 0 7px 0 43px;
+    border-radius: 7px;
+    border: 1.1px solid #FFF;
+}
+
+/*If any input with class of ".input" was focused then apply this style:*/
+.input:focus{
+    color: black;
+}
+
+/*Inputs-Focus or Icons (For better understanding check HTML file) Style:*/
+.input-focus{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+/*Inputs-Focus or Icons if focused, Style:*/
+.input-focus::after {
+    content: attr(data-symbol);
+    font-family: Material-Design-Iconic-Font;
+    color: #ffa84c; /*A little Icons*/
+    font-size: 19px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: calc(100% - 20px);
+    bottom: 0;
+    left: 0;
+    padding-left: 13px;
+    padding-top: 3px;
+}
+
+/*Icons Styles when the are focused*/
+.input:focus + .input-focus::after {
+    color: #f96c00;
+}
+
+
+
+/*The "a" tag inside Forgot Password Style*/
+#div-forgot-password a{
+    outline: none !important;
+    text-decoration: none;
+    color: white;
+}
+/*The "a" tag inside the Forgot Password when it is hovered*/
+#div-forgot-password a:hover{
+    color: black;
+}
+
+/*Login/Signup/Submit button container or div*/
+.container-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Login/Signup/Submit button another container for responsive purposed only.*/
+.wrap-form-btn {
+    width: 100%;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 0px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/*Login/Signup/Submit Button Style*/
+.form-btn {
+    font-family: Calibri;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 37px;
+    border: none;
+    background-color: #ffa84c;
+    transition: all 0.4s;
+    border-radius: 7px;
+}
+
+/*If Login/Signup/Submit was clicked or focused, style*/
+.form-btn:focus{
+    background: #f96c00;
+    color: white;
+}
+/*CheckBox Style:*/
+.check-container {
+    display: block;
+    position: relative;
+    padding-left: 22px;
+    cursor: pointer;
+    font-size: 17px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+}
+
+/* Hide the browser's default checkbox */
+.check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    height: 13px;
+    width: 13px;
+    border: 1px solid #FFF;
+    box-sizing: content-box;
+    border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+    background-color: white;
+}
+
+/* When the checkbox is checked, add this color background */
+.check-container input:checked ~ .checkmark {
+    background-color: #ffa84c;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.check-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.check-container .checkmark:after {
+    left: 3.9px;
+    top: 0.8px;
+    width: 3px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*----------------------------------Elements Inside #Form Element Ends Here---------------------------------------*/
+/*Sign in/up button in the corner*/
+.sign-in{
+    display: inline-block;
+    text-align: right;
+    padding-top: 8px;
+    padding-right: 2px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/*Sign in/up button in the corner inside a tag style*/
+.sign-in a {
+    border: 1px solid #FFF;
+    padding: 5px 20px;
+    border-radius: 7px;
+    border-top-right-radius: 0px;
+    font-family: Calibri;
+    color: white;
+}
+
+/*Sign in/up button in the corner when it is hoverd*/
+.sign-in a:hover{
+    box-shadow: 0 1px 5px white;
+    color: black;
+    cursor: pointer;
+}
+/*------------------------------------------[ Alert validation Styles ]----------------------------------------*/
+
+/*Input-Div (Inputs Div) and its validation style*/
+.validate-input {
+    position: relative;
+}
+
+/*Validation Background and Color and other Styles:*/
+.alert-validate::before {
+    content: attr(data-validate);
+    position: absolute;
+    max-width: 70%;
+    background-color: transparent;
+    border: 1px solid #f96c00;
+    border-radius: 7px;
+    padding: 4px 25px 4px 10px;
+    bottom: calc((100% - 20px) / 2);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+    right: 2px;
+    pointer-events: none;
+    font-family: Calibri;
+    color: black;
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+/*Validation Icon (!)*/
+.alert-validate::after {
+    content: "\f06a";
+    font-family: FontAwesome;
+    display: block;
+    position: absolute;
+    color: #f96c00;
+    font-size: 16px;
+    bottom: calc((100% - 20px) / 2);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+    right: 8px;
+}
+
+/*IF the user hovered or clicked the validation will be changed into visible.*/
+.alert-validate:hover:before {
+    visibility: visible;
+    opacity: 1;
+}
+/*------------------------------------Alerts Styles Ends Here-----------------------------------------*/
+
+
+/*----------------------------------[ Social Media items, Icons... ]-------------------------*/
+/*The "a" tags or links*/
+.login100-social-item {
+    font-size: 25px;
+    color: #FFF;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+}
+/*The "a" tags or links when they are hovered:*/
+.login100-social-item:hover {
+    color: #FFF;
+    box-shadow: 0px 0px 15px 3px #FFF; /*Shadow is here.*/
+}
+
+
+/*[ Utilities]*/
+.bg1 {background-color: rgba(255, 255, 255, 0.1);}
+.bg2 {background-color: rgba(255, 255, 255, 0.1);}
+.bg3 {background-color: rgba(255, 255, 255, 0.1);}
+
+/*----------------------------------[ Social Media items, Icons. Ends.. ]-------------------------*/
+
+/*-------------------------------Utilites (Global Classess)----------------------------------------*/
+/*.txt1, .txt2 are for headers, p, spans purposed only, check HTML file. */
+
+.txt1 a{
+    color: white;
+}
+
+.txt1 a:hover{
+    color: black;
+}
+.txt1 {
+    font-family: Calibri;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #FFF;
+}
+
+.txt2 {
+    font-family: Calibri;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.txt2:hover{
+    color: darkgreen;
+}
+
+#span-font{
+    font-family: Calibri;
+    color: black;
+    font-weight: bold;
+}
+/*-------------------------------Utilites (Global Classess) Ends----------------------------------------*/
+
+/*---------------------------------------[ Forget.html CSS Styles ]-------------------------------------*/
+
+/*THe only input in Forget.html page and its style:*/
+#forget-email{
+    padding-left: 8px;
+}
+
+/*Forget Email Title (Password Reset)*/
+.form-title-forget{
+    text-align: left;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 37px;
+    font-family: sans-serif, serif;
+    font-weight: bold;
+    display: block;
+    top: 0;
+}
+
+/*Container Of #Forget-email (Input): (Used only for Padding and Responsive Purposes)*/
+#forget-email-div{
+    padding: 18px 0px 18px 0px;
+}
+
+/*------------Note: The following alerts only belongs to Forget.html, nothing else.-------------*/
+
+/*Validation Background and Color and other Styles:*/
+.alert-validate-forget::before {
+    content: attr(data-validate);
+    position: absolute;
+    max-width: 70%;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 7px;
+    padding: 4px 25px 4px 10px;
+    bottom: calc((100%) / 2);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+    right: 2px;
+    pointer-events: none;
+    font-family: Calibri;
+    color: black;
+    font-size: 9px;
+    line-height: 1.4;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+/*Validation Icon (!)*/
+.alert-validate-forget::after {
+    content: "\f06a";
+    font-family: FontAwesome;
+    display: block;
+    position: absolute;
+    color: #096a6d;
+    font-size: 16px;
+    bottom: calc((100%) / 2);
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+    right: 8px;
+}
+
+/*IF the user hovered or clicked the validation will be changed into visible.*/
+.alert-validate-forget:hover:before {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*After submitting the email this form will show up (.Form-Sent):*/
+.form-sent{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.7s ease-out;
+    transition-delay: 0.2s;
+    transform: translateX(-30px);
+}
+
+/*Spans elments inside the .form-sent and their styles:*/
+.form-sent span{
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    color: white;
+}
+
+/*The elments inside the .form-title-forget div*/
+.form-sent .form-title-forget{
+    font-size: 29px;
+    text-align: center;
+}
+
+/*When the user submit the email, then this class hide the #form*/
+.hide-form{
+    transition: 0.7s ease;
+    opacity: 0;
+    transform: translateX(250px) scale(0.5);
+}
+
+/*This class, simply [shows] the hidden (.form-sent) which is hidden. */
+.show-form{
+    z-index: 2;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+/*------------------------------All Styles Ends------------------------------------------*/
+
+/*Responsive Purposed (Laptops, Mobiles, Tablets...)*/
+
+@media (max-width: 767px){
+    .sidewallpaper{
+        display: none;
+    }
+
+    .form-title{
+        display: none;
+    }
+
+    .title{
+        display: block;
+    }
+}
+
+@media (max-width: 320px){
+    #form{
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .form, .form-sent{
+        width: 100%;
+        padding: 0px 15px;
+    }
+
+    .logo{
+        width: 150px;
+    }
+
+    .sign-in a{
+        padding: 3px 10px;
+    }
+}

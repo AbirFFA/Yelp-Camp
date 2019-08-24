@@ -8,7 +8,7 @@ router.get("/", function(req, res){
 });
 
 router.get("/register", function (req, res) {
-    res.render("register");
+    res.render("register2");
 });
 
 router.post("/register", function (req, res) {
@@ -25,7 +25,7 @@ router.post("/register", function (req, res) {
 });
 
 router.get("/login", function (req, res) {
-    res.render("login");
+    res.render("login2");
 });
 
 router.post("/login", passport.authenticate("local",{
