@@ -72,6 +72,13 @@
             </div>
 
             <div class="input-div">
+                <span class="input-label">Price:</span>
+                <input id="campgroundImageUrl" class="input" type="number" name="campground[price]" value="<%= campground.price %>" min="0.01" step="0.01">
+                <span id="passwordId" class="input-focus" data-symbol="&#xf190;"></span>
+                <!--Remember: The data-symbol gets the label/input icon-->
+            </div>
+
+            <div class="input-div">
                 <span class="input-label">Description:</span>
                 <textarea id="campgroundDescription" class="input" type="text" name="campground[description]"><%= campground.description %></textarea>
                 <span class="input-focus" data-symbol="&#xf190;"></span>
