@@ -1,11 +1,27 @@
-<% include ./partials/header %>
+<!DOCTYPE html>
 
-<div class="container">
-    <h1>Landing Page</h1>
+<html>
+    <head>
+        <title>Yelp Camp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <link rel="stylesheet" href="/stylesheets/landing.css">
+        <script src="https://kit.fontawesome.com/1ae402c3f5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    </head>
 
-    <p>Welcome to YelpCamp</p>
+    <body>
+    <div id="landing-header">
+        <h1>Welcome to Yelp Camp</h1>
+        <a href="/campgrounds" class="btn btn-primary">View all campgrounds</a>
+    </div>
 
-    <a href="/campgrounds">View all campgrounds</a>
-</div>
+    <ul class="slideshow">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 
-<% include ./partials/footer %>
+<% include ./partials/footer.ejs %>
