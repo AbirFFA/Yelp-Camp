@@ -1,3 +1,10 @@
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
 #deleteForm {
     display: inline;
 }
@@ -18,3 +25,21 @@
     -o-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
 }
+
+#round_btn {
+    border-radius: 20px;
+}
+
+#card_img {
+    border-radius: 15px;
+}
+
+#card_catagory {
+    padding: 10px;
+}
+
+#search_btn {
+    border: 2px;
+    border-radius: 10px;
+}
+

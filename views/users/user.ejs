@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="font-family: 'Open Sans', sans-serif;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>YelpCamp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    <link rel="stylesheet" href="../../../../../Documents/Campground%20UI/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i">
+    <link rel="stylesheet" href="/stylesheets/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean-button">
+            <div class="container">
+<!--                <img src="../../../../../Documents/Campground%20UI/assets/img/logo2.png" style="height: 56px;">-->
+                <a class="navbar-brand" href="#" style="font-family: 'Open Sans', sans-serif;">Campvibes</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="/" style="font-family: 'Open Sans', sans-serif;font-weight: bold;color: #000000;">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/campgrounds" style="font-weight: 600;">Campgrounds</a></li>
+                    </ul>
+                    <span class="navbar-text actions">
+                        <button class="btn btn-light shadow-sm action-button" type="button" style="background-color: rgb(1,2,78);font-weight: bold;">&nbsp; <%= user.username %> &nbsp;</button>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div style="margin-top: 120px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="font-family: 'Open Sans', sans-serif;">
+                    <div class="card border-white"><img class="card-img-top w-100 d-block shadow" id="card_img" src="<%= user.avatar%>">
+                        <div class="card-body" style="padding-left: 0px;">
+                            <h4 class="card-title" style="font-weight: bold;font-size: 20px;"><%= user.firstName %> <%= user.lastName%></h4>
+                            <h6 class="text-muted card-subtitle mb-2" style="font-style: italic;font-weight: 600;"><%= user.username%></h6>
+                            <h6 class="text-muted card-subtitle mb-2" style="font-style: italic;font-weight: 600;"><%= user.email %></h6>
+                            <p class="card-text" style="font-weight: 500;font-size: 14px;">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn text-white border-white shadow" id="round_btn"
+                                type="button" style="background-color: #01024e;font-weight: 600;">Edit Profile</button></div>
+                    </div>
+                </div>
+                <div class="col-md-9 vl" style="padding-left: 70px;">
+                    <h4 style="margin-bottom: 50px;">Campgrounds</h4>
+
+                    <div class="row">
+                        <% campgrounds.forEach(function (campground) { %>
+                            <div class="col-md-4">
+                                <div class="card border-white">
+                                    <img class="card-img-top w-100 d-block" id="card_img" src="<%= campground.image %>">
+                                    <div class="card-body" style="padding-left: 0px;">
+                                        <h6 class="text-muted card-subtitle mb-2"><span class="badge badge-primary">Jungle</span></h6>
+                                        <a class="card-title" href="/campgrounds/<%= campground._id %>" style="font-weight: bold;font-size: 18px;"><%= campground.name%></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% });%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
