@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yelp Camp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Following CSS files are connected to this HTML file, externally.-->
+    <link href="/stylesheets/form_css/style.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/form_css/util.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/resources/fonts/iconic/css/material-design-iconic-font.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!--    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--External CSS Files ends here-->
+
+</head>
+<body>
+    <!--In case, if the user wanted to move all elements from one place to one place, then simply copy and past the limiter tag with elements inside. We also created the limiter div for responsive design or if the user wanted to set width or height optionally.-->
+	<div class="limiter">
+
+        <!--Side Wallpaper Structure Starts-->
+		<div class="sidewallpaper col-md-6">
+            <div class="sidewallpaper-background">
+    			<span class="p-t-30 form-title">
+    				Yelp Camp
+    			</span>
+
+    			<p class="ptitle">Made for campground lovers.</p>
+            </div>
+		</div>
+        <!--Side Wallpaper Structure Ends-->
+
+        <!--This is the div which contains all the elements (form-container)-->
+		<div class="form-container col-md-6">
+
+            <!--Signup/Login button in the corner structures starts here-->
+            <div class="sign-in">
+                <a href="/campgrounds">Home</a>
+                <a href="/register">Sign In</a>
+            </div>
+            <!--Signup/Login button in the corner structures ends here-->
+
+            <!--Default (Password Reset) Form - Starts-->
+            <form class="form" action="/forgot" method="post">
+                <!--Title of form starts-->
+                <span class="form-title-forget p-b-5">Reset Password</span>
+                <!--Title of form ends-->
+
+                <!--Description under title starts-->
+                <span class="txt1">To renew your password, enter the email address you use to log-in to CampVibes.</span>
+                <!--Description under title ends-->
+
+                <!--Username Input and It's Icons, Label...-->
+                <div id="forget-email-div" class="input-div" data-validate="Email is required">
+                    <input id="forget-email" class="input" type="email" name="email" placeholder="Type your email:">
+                    <!--Remember: The data-symbol gets the label/input icon-->
+                </div>
+
+                <!--Log in button/submit and its containers...-->
+                <div class="container-form-btn">
+                    <div class="wrap-form-btn">
+                        <button id="submitBtn" class="form-btn" type="submit">
+                            Send Request
+                        </button>
+                    </div>
+                </div>
+                <!--Log in Button structure ends here-->
+            </form>
+            <!--Default (Password Reset) Form - Ends-->
+
+
+
+            
+            <!--Form (After Reset Password) Starts: The form, which is displayed after the (reset password) form.-->
+            <form class="form-sent">
+                <!--The Check Mark-->
+                <span class="card-icon"><i class="zmdi zmdi-check-circle zmdi-hc-4x"></i></span>
+                <span class="form-title-forget p-t-20 p-b-20">Password Link Sent</span>
+                
+                <span class="txt1">Please check your inbox fahimfaisalffa@gmail.com</span>
+                <!--The horizontal line-->
+                <hr>
+                
+                <span class="txt1 p-t-30"> Unsure if that email was correct? <a href="#">Click here</a></span>
+            
+            </form>
+            <!--Form (After Reset Password) Starts: ends here-->
+        </div>
+        <!--Form which containers all the elements (form-container) ends here.-->
+	</div>
+    <!--Limiter Div structure ends.-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/stylesheets/resources/script/script.js"></script><!--External JavaScript Files Connected with this HTML-->
+</body>
+</html>
