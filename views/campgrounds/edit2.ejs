@@ -54,7 +54,7 @@
         <!--Logo as Title when the width is minimum than 768px. (Best for Mobiles, Tablets...) Ends-->
 
         <!--Form Structure Starts-->
-        <form action="/campgrounds/<%= campground._id %>?_method=PUT" id="form" method="post">
+        <form action="/campgrounds/<%= campground._id %>?_method=PUT" id="form" method="post" enctype="multipart/form-data">
             <!--Username Input and It's Icons, Label...-->
             <div class="input-div">
                 <span class="input-label">Name:</span>
@@ -68,6 +68,12 @@
                 <span class="input-label">Image URL:</span>
                 <input id="campgroundImageUrl" class="input" type="url" name="campground[image]" value="<%= campground.image %>">
                 <span id="passwordId" class="input-focus" data-symbol="&#xf190;"></span>
+                <!--Remember: The data-symbol gets the label/input icon-->
+            </div>
+            <span>Or</span>
+            <div class="input-div">
+                <span class="input-label">Image:</span>
+                <input id="campgroundImageUrl" type="file" name="image" accept="image/*">
                 <!--Remember: The data-symbol gets the label/input icon-->
             </div>
 
